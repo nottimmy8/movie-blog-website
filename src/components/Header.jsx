@@ -31,10 +31,22 @@ function Header() {
   }, []);
 
   console.log(responses);
+
   return (
-    <div className=" h-screen w-full bg-black">
+    <div className=" h-screen w-full">
       <Navbar />
-      <div className=" "></div>
+      <div className="">
+        {responses.map((response, index) => (
+          <div
+            key={index}
+            style={{
+              backgroundImage: `url(https://image.tmdb.org/t/p/original/${response.poster_path})`,
+            }}
+          >
+            <h1>{response.title}</h1>
+          </div>
+        ))}
+      </div>
     </div>
   );
 }
