@@ -4,6 +4,7 @@ import axios from "axios";
 
 function Header() {
   const [responses, setResponse] = useState([]);
+  const [randomIndex, setRandomIndex] = useState(0);
 
   const topRated = async () => {
     try {
@@ -13,13 +14,10 @@ function Header() {
           headers: {
             accept: "application/json",
             Authorization:
-              "Bearer eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiIzYjRmZDJlM2MzYTc5N2JmMDhmZDM3NjhhYzYyYmE5OSIsInN1YiI6IjY1YmEzMGU3ZTlkYTY5MDE3YmY1ZWYzOCIsInNjb3BlcyI6WyJhcGlfcmVhZCJdLCJ2ZXJzaW9uIjoxfQ.h0D2I4SCXYCfendFQfyTwrf7YZO3tbE9Pf0XLEdzdKE",
+              "Bearer eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiIzYjRmZDJlM2MzYTc5N2JfmdfsdfsdfmMDfmMDFWQWEETdKe",
           },
         }
       );
-      console.log("Response", response);
-      console.log("Data", response.data);
-      console.log("Result", response.data.results);
       setResponse(response.data.results);
     } catch (error) {
       console.error(error);
@@ -30,22 +28,29 @@ function Header() {
     topRated();
   }, []);
 
-  console.log(responses);
+  useEffect(() => {
+    // Generate a random index within the length of the responses array
+    const randomIndex = Math.floor(Math.random() * responses.length);
+    setRandomIndex(randomIndex);
+  }, [responses]);
+
+  const backgroundUrl = `https://image.tmdb.org/t/p/original/${responses[randomIndex]?.poster_path}`;
 
   return (
-    <div className=" h-screen w-full">
-      <Navbar />
-      <div className="">
-        {responses.map((response, index) => (
-          <div
-            key={index}
-            style={{
-              backgroundImage: `url(https://image.tmdb.org/t/p/original/${response.poster_path})`,
-            }}
-          >
-            <h1>{response.title}</h1>
-          </div>
-        ))}
+    <div className="">
+      <div
+        className="max-w-[1640px] mx-auto p-4 bg-cover bg-center h-screen"
+        style={{ backgroundImage: `url(${backgroundUrl})` }}
+      >
+        <Navbar />
+        <div className=" w-[500px] text-left ">
+          <h1 className="px-4 text-white text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold">
+            {responses[randomIndex]?.title}{" "}
+          </h1>
+          <h2 className=" text-white text-left">
+            {responses[randomIndex]?.overview}{" "}
+          </h2>
+        </div>
       </div>
     </div>
   );

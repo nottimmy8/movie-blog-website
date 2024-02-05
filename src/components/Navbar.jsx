@@ -5,7 +5,7 @@ import { HiMenuAlt4 } from "react-icons/hi";
 
 function Navbar() {
   return (
-    <div className=" flex max-w-[1250px] mx-auto p-3 justify-between items-center ">
+    <div className=" bg-transparent flex max-w-[1250px] mx-auto p-3 justify-between items-center ">
       {/* Logo */}
       <div className=" hidden md:flex ">
         <img src={logo} alt="logo" />
