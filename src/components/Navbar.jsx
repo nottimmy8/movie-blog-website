@@ -5,13 +5,13 @@ import { HiMenuAlt4 } from "react-icons/hi";
 
 function Navbar() {
   return (
-    <div className=" bg-transparent flex max-w-[1250px] mx-auto p-3 justify-between items-center ">
+    <div className=" bg-transparent flex max-w-6xl mx-auto py-3 justify-between items-center ">
       {/* Logo */}
       <div className=" hidden md:flex ">
         <img src={logo} alt="logo" />
       </div>
       {/* search */}
-      <div className=" bg-transparent  border-2 border-white rounded-10 flex items-center px-2  sm:w-[350px]  lg:w-[500px]    ">
+      <div className=" bg-transparent  border-2 border-white rounded-10 flex items-center px-2  w-[90%]  md:w-[45%]    ">
         <input
           className="bg-transparent p-2 w-full focus:outline-none text-white"
           type="text"

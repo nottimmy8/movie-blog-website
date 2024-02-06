@@ -1,6 +1,7 @@
 import axios from "axios";
 import React, { useEffect, useState } from "react";
 import "../index.css";
+import { AiOutlineLike } from "react-icons/ai";
 
 const Feature = () => {
   const [responses, setResponse] = useState([]);
@@ -33,22 +34,25 @@ const Feature = () => {
 
   console.log(responses);
   return (
-    <div className="max-w-[1100px]  mx-auto ">
-      <div className=" flex items-center justify-between py-6">
+    <div className="max-w-6xl mx-auto px-4 ">
+      <div className=" flex items-center justify-between py-10 ">
         {/* Heading  */}
         <h2>Featured</h2>
         <p>See More</p>
       </div>
       {/*  */}
-      <div className="flex flex-wrap justify-between items-center ">
+      <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-10">
         {responses.map((response, index) => (
           <div key={index}>
-            <div className="max-w-[250px]">
+            <div className=" relative hover:scale-105">
               <img
                 src={`https://image.tmdb.org/t/p/original/${response.poster_path}`}
                 alt={response.title}
-                className="w-full "
+                className=""
               />
+              <div className=" absolute top-5 right-2 rounded-full bg-white p-1">
+                <AiOutlineLike size={20} />
+              </div>
             </div>
 
             <div className=" py-3">
