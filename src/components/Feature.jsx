@@ -2,6 +2,7 @@ import axios from "axios";
 import React, { useEffect, useState } from "react";
 import "../index.css";
 import { AiOutlineLike } from "react-icons/ai";
+import { Link } from "react-router-dom";
 
 const Feature = () => {
   const [responses, setResponse] = useState([]);
@@ -46,13 +47,13 @@ const Feature = () => {
           {responses.map((response, index) => (
             <div key={index}>
               <div className=" relative hover:scale-105">
-                <link to={`/Movie/${response?.id} `}>
+                <Link to={`/Movie/${response?.id}`}>
                   <img
                     src={`https://image.tmdb.org/t/p/original/${response.poster_path}`}
                     alt={response.title}
                     className=""
                   />
-                </link>
+                </Link>
                 <div className=" absolute top-5 right-2 rounded-full bg-white p-1">
                   <AiOutlineLike size={20} />
                 </div>
