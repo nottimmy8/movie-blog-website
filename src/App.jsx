@@ -1,15 +1,14 @@
 import React from "react";
-
-import Header from "./components/Header.jsx";
-import Feature from "./components/Feature.jsx";
-import Footer from "./components/Footer.jsx";
+import Header from "../src/components/Header.jsx";
+import Feature from "../src/components/Feature.jsx";
+import { Route, Routes } from "react-router-dom";
 
 function App() {
   return (
     <div>
-      <Header />
-      <Feature />
-      <Footer />
+      <Routes>
+        <Route path="/" element={<Header />} />,
+      </Routes>
     </div>
   );
 }

@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 import Navbar from "../components/Navbar.jsx";
 import axios from "axios";
 import { IoMdPlayCircle } from "react-icons/io";
+import Feature from "./Feature.jsx";
 
 function Header() {
   const [responses, setResponse] = useState([]);
@@ -68,6 +69,9 @@ function Header() {
             </button>
           </div>
         </div>
+      </div>
+      <div>
+        <Feature />
       </div>
     </div>
   );
