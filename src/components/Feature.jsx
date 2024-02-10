@@ -35,12 +35,12 @@ const Feature = () => {
 
   console.log(responses);
   return (
-    <div className=" bg-black ">
+    <div className="  ">
       <div className="max-w-6xl mx-auto px-4  ">
         <div className=" flex items-center justify-between py-10 ">
           {/* Heading  */}
-          <h2 className=" text-3xl font-bold text-white">Featured</h2>
-          <p className=" font-bold text-white">See More</p>
+          <h2 className=" text-3xl font-bold ">Featured</h2>
+          <p className=" font-bold ">See More</p>
         </div>
         {/*  */}
         <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-10">
@@ -60,8 +60,8 @@ const Feature = () => {
               </div>
 
               <div className=" py-3 ">
-                <h1 className=" text-white">{response.release_date} </h1>
-                <h1 className=" text-white">{response.title}</h1>
+                <h1 className=" ">{response.release_date} </h1>
+                <h1 className=" ">{response.title}</h1>
               </div>
             </div>
           ))}

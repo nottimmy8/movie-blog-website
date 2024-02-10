@@ -3,6 +3,7 @@ import Navbar from "../components/Navbar.jsx";
 import axios from "axios";
 import { IoMdPlayCircle } from "react-icons/io";
 import Feature from "./Feature.jsx";
+import { Link } from "react-router-dom";
 
 function Header() {
   const [responses, setResponse] = useState([]);
@@ -63,10 +64,12 @@ function Header() {
               {responses[randomIndex]?.overview}{" "}
             </h2>
 
-            <button className=" flex items-center bg-[#be123c] w-fit px-5 py-1.5 rounded-md gap-2 text-white text-1xl">
-              {" "}
-              <IoMdPlayCircle /> WATCH TRAILER
-            </button>
+            <Link>
+              <button className=" flex items-center bg-[#be123c] w-fit px-5 py-1.5 rounded-md gap-2 text-white text-1xl">
+                {" "}
+                <IoMdPlayCircle /> WATCH TRAILER
+              </button>
+            </Link>
           </div>
         </div>
       </div>

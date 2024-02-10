@@ -6,6 +6,7 @@ import { RiHome4Line } from "react-icons/ri";
 import { BiCameraMovie } from "react-icons/bi";
 import { SlScreenDesktop } from "react-icons/sl";
 import { PiNotepadBold } from "react-icons/pi";
+import { Link } from "react-router-dom";
 
 function Movie() {
   const { id } = useParams();
@@ -70,27 +71,33 @@ function Movie() {
           <div className="hidden md:grid border border-black/30 rounded-tr-3xl rounded-br-3xl w-[15rem] py-4 overflow-hidden">
             <div>
               {/* logo */}
-              <div className="w-[12rem] px-4">
-                <img src={logo} alt="logo" className=" w-full" />
-              </div>
+              <Link to={`/Header/${response?.id}`}>
+                <div className="w-[12rem] px-4">
+                  <img src={logo} alt="logo" className=" w-full" />
+                </div>
+              </Link>
               {/*  */}
               <ul className=" mt-7">
-                <li>
-                  <a
-                    className="flex items-center gap-2 text-lg font-semibold hover:bg-[#BE123C]/10 text-[#666666] hover:text-[#BE123C] py-5 pl-5 md:pl-9 hover:border-r-8 hover:border-r-[#BE123C] ease-out duration-500"
-                    href=""
-                  >
-                    <RiHome4Line /> Home
-                  </a>
-                </li>
-                <li>
-                  <a
-                    className="flex items-center gap-2 text-lg font-semibold hover:bg-[#BE123C]/10 text-[#666666] hover:text-[#BE123C] py-5 pl-5 md:pl-9 hover:border-r-8 hover:border-r-[#BE123C] ease-out duration-500"
-                    href=""
-                  >
-                    <BiCameraMovie /> Movies
-                  </a>
-                </li>
+                <Link to={`/Header/${response?.id}`}>
+                  <li>
+                    <a
+                      className="flex items-center gap-2 text-lg font-semibold hover:bg-[#BE123C]/10 text-[#666666] hover:text-[#BE123C] py-5 pl-5 md:pl-9 hover:border-r-8 hover:border-r-[#BE123C] ease-out duration-500"
+                      href=""
+                    >
+                      <RiHome4Line /> Home
+                    </a>
+                  </li>
+                </Link>
+                <Link to={`/Header/${response?.id}`}>
+                  <li>
+                    <a
+                      className="flex items-center gap-2 text-lg font-semibold hover:bg-[#BE123C]/10 text-[#666666] hover:text-[#BE123C] py-5 pl-5 md:pl-9 hover:border-r-8 hover:border-r-[#BE123C] ease-out duration-500"
+                      href=""
+                    >
+                      <BiCameraMovie /> Movies
+                    </a>
+                  </li>
+                </Link>
                 <li>
                   <a
                     className="flex items-center gap-2 text-lg font-semibold hover:bg-[#BE123C]/10 text-[#666666] hover:text-[#BE123C] py-5 pl-5 md:pl-9 hover:border-r-8 hover:border-r-[#BE123C] ease-out duration-500"
